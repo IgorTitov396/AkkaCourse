@@ -6,4 +6,5 @@ project
 *.ipr
 *.iws
 .idea
+*.swp
 out
