@@ -1,7 +1,8 @@
-package program.actors
+package task1
+
 import akka.actor.Actor
 import akka.event.Logging
-import program.actors.messages.MessageForFirstTask
+import task1.messages.MessageForFirstTask
 
 class ActorForFirstTask(var str: String = "") extends Actor {
   val log = Logging(context.system, this)

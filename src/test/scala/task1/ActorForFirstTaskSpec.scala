@@ -1,9 +1,9 @@
-package program.actors
+package task1
 
 import akka.actor.ActorSystem
 import akka.testkit.TestActorRef
 import org.scalatest.{BeforeAndAfterEach, FunSpecLike, Matchers}
-import program.actors.messages.MessageForFirstTask
+import task1.messages.MessageForFirstTask
 
 class ActorForFirstTaskSpec extends FunSpecLike with Matchers with BeforeAndAfterEach {
   implicit val system = ActorSystem()
@@ -22,3 +22,4 @@ class ActorForFirstTaskSpec extends FunSpecLike with Matchers with BeforeAndAfte
     }
   }
 }
+x

@@ -1,4 +1,4 @@
-package program.actors
+package task1
 
 class ActorForFirstTaskTest {
 
