@@ -1,3 +1,3 @@
-object Test {
+class Test extends  {
 
 }
