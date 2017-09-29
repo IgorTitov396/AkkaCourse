@@ -22,4 +22,3 @@ class ActorForFirstTaskSpec extends FunSpecLike with Matchers with BeforeAndAfte
     }
   }
 }
-x

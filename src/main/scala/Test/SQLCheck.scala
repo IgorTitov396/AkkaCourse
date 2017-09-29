@@ -1,4 +1,3 @@
-import akka.stream.impl.Compose
 import com.sun.javafx.util.Logging
 
 /**
@@ -45,7 +44,7 @@ class SQLAPI(resource: String) {
 
   val connection = (resource: String) => Connection(resource)
 
-  def execute(sql: String) = ((((logParameter[String](_)) andThen (Connection.apply(_: String).open)) andThen (openConnection(_: Connection) compose logParameter[String] _))(_: String) andThen logParameter[String] _)(resource)(sql)
+  def execute(sql: String) = ((((logParameter[String](_)) andThen (Connection.apply(_: String).open)) andThen (openConnection(_: Connection) compose (logParameter[String](_:String))))(_:String) andThen (logParameter[String](_:String)))(resource)(sql)
 
   def openConnection(connection: Connection): (String) => String =
     (sql: String) => {
@@ -59,5 +58,3 @@ object SQLCheck extends App {
   new SQLAPI("some DB").execute("some SQL")
 
 }
-
-"adf".toInt
