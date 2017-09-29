@@ -30,5 +30,16 @@ class TestSpec extends FunSpecLike with Matchers {
       }
       assert(err.getMessage === "Not Int")
     }
+    it("Spec for class Test #4") {
+      val obj = Test[String]("34", (_).toInt)
+      Thread.sleep(1000)
+      assert(obj.answer2 == 35)
+    }
+    it("Spec for class Test #5") {
+      val obj = Test[String]("2", (_).toInt)
+      val res = Await.result(obj.fut3, 1 second)
+      assert(res === obj.answer + obj.answer2)
+      assert(res === 5)
+    }
   }
 }

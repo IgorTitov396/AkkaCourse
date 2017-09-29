@@ -1,10 +1,7 @@
 target
-project
-
 *.class
 *.iml
 *.ipr
 *.iws
 .idea
 *.swp
-out

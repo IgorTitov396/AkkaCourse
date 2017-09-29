@@ -1,6 +1,8 @@
 import akka.stream.impl.Compose
 import com.sun.javafx.util.Logging
 
+import scala.concurrent.Promise
+
 /**
   * Представим себе, как бы мог выглядеть API для работы, например, с БД
   * Строить методы этого API будем через композицию уже определенных методов.

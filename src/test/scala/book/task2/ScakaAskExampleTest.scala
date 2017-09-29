@@ -6,9 +6,9 @@ import akka.actor.{ActorSystem, Props}
 import akka.pattern.ask        //Для того, чтобы юзать ask/? у актора
 import akka.util.Timeout
 import org.scalatest.{FunSpecLike, Matchers}
-
 import scala.concurrent.Await
 import scala.concurrent.duration._
+
 class ScalaAskExamplesTest extends FunSpecLike with Matchers {
   val system = ActorSystem()
   implicit val timeout = Timeout(5 seconds)  //время в течение которого будет ждать сообщение актор, вызвав метод ask/?
