@@ -52,9 +52,3 @@ class SQLAPI(resource: String) {
     }
 
 }
-
-object SQLCheck extends App {
-
-  new SQLAPI("some DB").execute("some SQL")
-
-}
