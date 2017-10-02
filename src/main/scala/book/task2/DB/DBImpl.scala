@@ -7,7 +7,12 @@ import book.task2.messages.{GetRequest, KeyNotFoundException, SetRequest}
 class DBImpl extends Actor {
   val map = scala.collection.mutable.Map[String, Any]()
   val log = Logging(context.system, this)
-  log.info("Server is up. Actor name of server: %s".format(self.path.name))
+
+
+  override def preStart(): Unit = {
+    log.info("Server is up. Actor name of server: %s".format(self.path.name))
+  }
+
   override def receive = {
     case SetRequest(key, value) =>
       log.info("received SetRequest - key: {} value: {}", key, value)
@@ -21,6 +26,8 @@ class DBImpl extends Actor {
         case None => sender() ! Status.Failure(new
             KeyNotFoundException(key))
       }
-    case o => Status.Failure(new ClassNotFoundException)
+    case o =>
+      log.error(s"Unexpected message: $o")
+      sender() ! Status.Failure(new ClassNotFoundException)
   }
 }
